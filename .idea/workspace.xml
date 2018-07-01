@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c90ba7f0-9be4-4a20-844c-2f5af87e7f02" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/cn/bobdeng/line/queue/domain/queue/QueueServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/cn/bobdeng/line/queue/domain/queue/QueueServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/src/test/java/cn/bobdeng/line/queue/domain/queue/QueueServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/test/java/cn/bobdeng/line/queue/domain/queue/QueueServiceImplTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -14,6 +13,11 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/queue$QueueServiceImplTest.ic" NAME="QueueServiceImplTest Coverage Results" MODIFIED="1530448183718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>cn.bobdeng.line.queue.domain.queue.*</FILTER>
+    </SUITE>
   </component>
   <component name="FileEditorManager">
     <leaf>
@@ -38,7 +42,7 @@
       <file leaf-file-name="QueueServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/domain/src/main/java/cn/bobdeng/line/queue/domain/queue/QueueServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="244">
               <caret line="28" column="98" selection-start-line="28" selection-start-column="98" selection-end-line="28" selection-end-column="98" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -50,8 +54,8 @@
       <file leaf-file-name="QueueServiceImplTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/domain/src/test/java/cn/bobdeng/line/queue/domain/queue/QueueServiceImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="36" column="104" selection-start-line="36" selection-start-column="104" selection-end-line="36" selection-end-column="104" />
+            <state relative-caret-position="225">
+              <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -479,7 +483,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1530445561045</updated>
-      <workItem from="1530445562939" duration="2584000" />
+      <workItem from="1530445562939" duration="2650000" />
     </task>
     <servers />
   </component>
@@ -505,9 +509,15 @@
     <history-entry file="QueueServiceImplTest - 2018.07.01 at 20h 28m 48s.xml">
       <configuration name="QueueServiceImplTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="QueueServiceImplTest - 2018.07.01 at 20h 29m 24s.xml">
+      <configuration name="QueueServiceImplTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueueServiceImplTest - 2018.07.01 at 20h 29m 45s.xml">
+      <configuration name="QueueServiceImplTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2584000" />
+    <option name="totallyTimeSpent" value="2650000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1416" height="817" extended-state="0" />
@@ -532,11 +542,12 @@
       <window_info id="Image Layers" />
       <window_info anchor="bottom" id="Java Enterprise" />
       <window_info anchor="right" id="Capture Analysis" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32998565" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32998565" />
       <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="right" id="Coverage" side_tool="true" visible="true" weight="0.13828239" />
       <window_info anchor="bottom" id="Spring" />
       <window_info anchor="bottom" id="Terminal" weight="0.32998565" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2496361" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2496361" />
       <window_info anchor="right" id="Bean Validation" />
       <window_info id="Web" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" />
@@ -652,7 +663,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/domain/src/main/java/cn/bobdeng/line/queue/domain/queue/QueueServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="244">
           <caret line="28" column="98" selection-start-line="28" selection-start-column="98" selection-end-line="28" selection-end-column="98" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -662,8 +673,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/domain/src/test/java/cn/bobdeng/line/queue/domain/queue/QueueServiceImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="36" column="104" selection-start-line="36" selection-start-column="104" selection-end-line="36" selection-end-column="104" />
+        <state relative-caret-position="225">
+          <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
         </state>
       </provider>
     </entry>

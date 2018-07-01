@@ -18,16 +18,16 @@ import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class QueueServiceImplTest {
-    public static final int ORG_ID = 11222;
-    public static final int BUSINESS_1 = 11;
-    public static final int BUSINESS_2 = 21;
+    public static final int ORG_ID = 100;
+    public static final int BUSINESS_1 = 1001;
+    public static final int BUSINESS_2 = 1002;
     public static final String BUSINESS_NAME_1 = "业务1";
     public static final String BUSINESS_NAME_2 = "业务2";
-    public static final int COUNTER_1 = 122;
+    public static final int COUNTER_1 = 2001;
     public static final String COUNTER_NAME_1 = "窗口1";
-    public static final int QUEUE_1 = 111;
-    public static final int QUEUE_2 = 2222;
-    public static final int USER_ID=100;
+    public static final int QUEUE_1 = 3001;
+    public static final int QUEUE_2 = 3002;
+    public static final int USER_ID=4001;
     @InjectMocks
     QueueServiceImpl queueService=new QueueServiceImpl();
     @Mock
