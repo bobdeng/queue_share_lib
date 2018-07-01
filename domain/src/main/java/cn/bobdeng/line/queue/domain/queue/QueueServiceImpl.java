@@ -25,8 +25,8 @@ public class QueueServiceImpl implements QueueService {
         Map<Integer,String> counterNames = queueRepository.getAllCounterNames(orgId);
         return queueRepository.getOrgQueue(orgId)
                 .stream()
-                .peek(queue -> queue.setBusinessName(businessNames.getOrDefault(queue.getId(),"")))
-                .peek(queue -> queue.setCounterName(counterNames.getOrDefault(queue.getId(),null)))
+                .peek(queue -> queue.setBusinessName(businessNames.getOrDefault(queue.getBusinessId(),"")))
+                .peek(queue -> queue.setCounterName(counterNames.getOrDefault(queue.getCounterId(),null)))
                 .collect(Collectors.toList());
     }
 
