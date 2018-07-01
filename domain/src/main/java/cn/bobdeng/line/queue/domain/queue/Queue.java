@@ -21,4 +21,6 @@ public class Queue {
     private String number;
     private String internalNumber;
     private int orderNumber;
+    private String counterName;
+    private String businessName;
 }
