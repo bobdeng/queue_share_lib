@@ -1,13 +1,8 @@
 package cn.bobdeng.line.queue.server.repo;
 
+import cn.bobdeng.line.db.BusinessDO;
 import cn.bobdeng.line.db.CounterDO;
 import cn.bobdeng.line.db.QueueDO;
-import cn.bobdeng.line.driver.domain.queue.Driver;
-import cn.bobdeng.line.driver.domain.queue.Queue;
-import cn.bobdeng.line.driver.domain.queue.QueueRepository;
-import cn.bobdeng.line.driver.server.dao.CounterDAO;
-import cn.bobdeng.line.driver.server.dao.DriverDAO;
-import cn.bobdeng.line.driver.server.dao.QueueDAO;
 import cn.bobdeng.line.queue.domain.queue.Queue;
 import cn.bobdeng.line.queue.domain.queue.QueueRepository;
 import com.tucodec.utils.BeanCopier;
@@ -19,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
@@ -33,9 +29,10 @@ public class QueueRepositoryJpaImpl implements QueueRepository {
     @Autowired
     CounterDAO counterDAO;
     @Autowired
-    DriverDAO driverDAO;
+    BusinessDAO businessDAO;
     @Autowired
     RedissonClient redissonClient;
+
     public static final String QUEUE_LOCK_KEY_PREFIX = "queue_lock_key_prefix_";
 
     @Override
@@ -90,6 +87,41 @@ public class QueueRepositoryJpaImpl implements QueueRepository {
     @Override
     public void createQueue(Queue queue) {
         queueDAO.save(queueToDo(queue));
+    }
+
+    @Override
+    public Map<Integer, String> getAllBusinessNames(int orgId) {
+        return businessDAO.findByOrgId(orgId).stream()
+                .collect(Collectors.toMap(BusinessDO::getId, BusinessDO::getName));
+    }
+
+    @Override
+    public Map<Integer, String> getAllCounterNames(int orgId) {
+        return counterDAO.findByOrgId(orgId).stream()
+                .collect(Collectors.toMap(CounterDO::getId, CounterDO::getName));
+    }
+
+    @Override
+    public Optional<Queue> findQueueById(int orgId, int queueId) {
+        return Optional.ofNullable(queueDAO.findByIdAndOrgId(queueId, orgId))
+                .map(queueDO -> BeanCopier.copyFrom(queueDO, Queue.class));
+    }
+
+    @Override
+    public void updateQueueOrderNumber(int queueId, int orderNumber) {
+        queueDAO.updateQueueOrderNumber(orderNumber, queueId);
+    }
+
+    @Override
+    public int findSmallestOrderNumber(int orgId) {
+        return Optional.ofNullable(queueDAO.findTop1ByOrgIdOrOrderByOrderNumberAsc(orgId))
+                .map(QueueDO::getOrderNumber)
+                .orElse(0);
+    }
+
+    @Override
+    public void remove(int queueId) {
+        queueDAO.delete(queueId);
     }
 
     private QueueDO queueToDo(Queue queue) {
